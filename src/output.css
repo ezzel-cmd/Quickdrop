@@ -227,6 +227,12 @@
   .top-\[calc\(0\%-200px\)\] {
     top: calc(0% - 200px);
   }
+  .top-\[calc\(0\%-280px\)\] {
+    top: calc(0% - 280px);
+  }
+  .top-\[calc\(7-280px\)\] {
+    top: calc(7 - 280px);
+  }
   .top-\[calc\(10\%-200px\)\] {
     top: calc(10% - 200px);
   }
@@ -275,8 +281,20 @@
   .top-\[calc\(50\%-400px\)\] {
     top: calc(50% - 400px);
   }
+  .top-\[calc\(60\%-280px\)\] {
+    top: calc(60% - 280px);
+  }
+  .top-\[calc\(65\%-280px\)\] {
+    top: calc(65% - 280px);
+  }
+  .top-\[calc\(70\%-280px\)\] {
+    top: calc(70% - 280px);
+  }
   .top-\[calc\(80\%-200px\)\] {
     top: calc(80% - 200px);
+  }
+  .top-\[calc\(80\%-280px\)\] {
+    top: calc(80% - 280px);
   }
   .-left-20 {
     left: calc(var(--spacing) * -20);
