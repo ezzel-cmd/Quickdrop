@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+    .ralewayFont {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;         
+    }
+      .card {
+        width: 350px;
+        height: 350px;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        position: absolute;
+        top: calc(50% - 175px);
+        left: calc(50% - 175px);
+        transition: 0.5s ease-in-out;
+      }
+     .away {
+        transform-origin: bottom left;
+      }
+    </style>
+    <title>Quickdrop</title>
+</head>
+<body class="ralewayFont h-[fit-content] w-full m-0 p-0 ">
+    <div class="stack-area relative top-0 w-[100%] h-[300vh] flex  bg-white">
+        <div class=" w-1/2 h-[100vh] flex flex-col justify-center gap-4 p-16">
+            <h1 class="text-5xl font-extrabold text-blue-900 ">Save your <br> Shopping Time</h1>
+            <p class="text-md text-gray-900 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, fugit porro commodi dolores consectetur soluta alias ducimus, qui deserunt minima odio reprehenderit est modi et? Alias maxime harum sed possimus!</p>
+        </div> 
+        <div class="relative w-1/2 h-[100vh] bg-white">
+            <div class="card  p-6 w-[350px] h-[350px] bg-blue-300 rounded-2xl flex flex-col gap-2 ">
+                <p class="font-bold text-3xl ">Quickdrop</p>
+                <p class="font-normal text-gray-500 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt illum neque error aspernatur quas reprehenderit odio voluptatum, ab id consequuntur rerum commodi explicabo, molestiae maiores est optio magni officia.</p>
+            </div>
+            <div class="card  p-6 w-[350px] h-[350px] bg-blue-500 rounded-2xl flex flex-col gap-2 ">
+                <p class="font-bold text-3xl ">Quickdrop</p>
+                <p class="font-normal text-gray-500 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt illum neque error aspernatur quas reprehenderit odio voluptatum, ab id consequuntur rerum commodi explicabo, molestiae maiores est optio magni officia.</p>
+            </div>
+            <div class="card  p-6 w-[350px] h-[350px]  bg-blue-700 rounded-2xl flex flex-col gap-2 ">
+                <p class="font-bold text-3xl ">Quickdrop</p>
+                <p class="font-normal text-gray-100 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt illum neque error aspernatur quas reprehenderit odio voluptatum, ab id consequuntur rerum commodi explicabo, molestiae maiores est optio magni officia.</p>
+            </div>
+            <div class="card  p-6 w-[350px] h-[350px]  bg-blue-900 rounded-2xl flex flex-col gap-2 ">
+                <p class="font-bold text-3xl ">Quickdrop</p>
+                <p class="font-normal text-gray-100 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt illum neque error aspernatur quas reprehenderit odio voluptatum, ab id consequuntur rerum commodi explicabo, molestiae maiores est optio magni officia.</p>
+            </div>
+        </div> 
+    </div>
+    <script>
+        let cards = document.querySelectorAll(".card"); 
+        let stackArea = document.querySelector(".stack-area");
+        
+        function rotateCards() {
+            let angle = 0;   
+            cards.forEach((card, index) => {
+                if(card.classList.contains("away")) {
+                    card.style.transform = `translateY(-120vh) rotate(-48deg)`;
+                }
+                else {
+                    card.style.transform = `rotate(${angle}deg)`;
+                    angle -= 10;
+                    card.style.zIndex = cards.length - index;
+                }
+            })  
+        }
+
+        
+        window.addEventListener("scroll", () => {
+
+            let distance = window.innerHeight * 0.5;
+            let topVal = stackArea.getBoundingClientRect().top;
+            let index = -1 * (topVal/distance + 1);
+            index = Math.floor(index);
+            for (i = 0; i<cards.length; i++){
+                if (i<=index){
+                    cards[i].classList.add("away");
+                }
+                else {
+                    cards[i].classList.remove("away");
+                }}   
+                rotateCards();
+        })
+
+    </script>
+</body>
+</html>
