@@ -15,14 +15,14 @@
       } */
       .left {
         height: 100vh;
-        flex-basis: 30%;
+        flex-basis: 36%;
         position: sticky;
         top: 0;
         left: 0;
       }
       .right {
         height: 100vh;
-        flex-basis: 70%;
+        flex-basis: 64%;
         position: sticky;
         top: 0;
       }
@@ -67,8 +67,8 @@
         
         /* border-radius: 25px; */
         /* margin-bottom: 10px; */
-        top: calc(50% - 200px);
-        left: calc(50% - 450px);
+        /* top: calc(50% - 200px);
+        left: calc(50% - 450px); */
         transition: 0.5s ease-in-out;
       }
       /* .card:nth-child(1) {
