@@ -12,6 +12,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <style>
+        .main-body {
+            width: 100%;
+            height: fit-content;
+            margin: 0;
+            padding: 0;
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        .left {
+            height: 100vh;
+            flex-basis: 36%;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        .right {
+            height: 100vh;
+            flex-basis: 64%;
+            position: sticky;
+            top: 0;
+        }
+
+        .card {
+            transition: 0.5s ease-in-out;
+            box-sizing: border-box;
+            padding: 35px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .away {
+            transform-origin: bottom left;
+        }
+
         .ralewayFont {
             font-family: "Raleway", sans-serif;
             font-optical-sizing: auto;
@@ -123,7 +160,7 @@
                         </span> <br> Right to Your Door.</h1>
                     <a href="https://quickdropapp.phixtz.com/"
                         class=" cursor-pointer border-[#ff6324] border-1 bg-white hover:bg-[#ff6324] duration-300 ease-in-out text-[#ff6324] hover:text-white rounded-full text-lg font-bold py-2 px-4 shadow-2xl hover:shadow-[0px_4px_0px_0px_black]">
-                        Download
+                        Download App
 
                     </a>
                 </div>
@@ -166,29 +203,29 @@
             class="counters absolute top-20 md:top-0 h-auto sm:h-30 md:h-40 w-full lg:w-[90%] bg-yellow-300 z-60 grid grid-cols-1 grid-rows-5 sm:grid-cols-5 sm:grid-rows-1 place-content-center place-items-center">
             <div
                 class=" h-20 w-full border-b-4 sm:border-r-4 sm:border-b-0  border-black/10 grid place-content-center text-center ">
-                <h1 class="counter text-4xl font-bold text-white" data-count="1000">0</h1>
+                <h1 class="downloads text-4xl font-bold text-white" data-count="1000">0</h1>
                 <p class="font-medium">Downloads</p>
             </div>
             <div
                 class=" h-20 w-full border-b-4 sm:border-r-4 sm:border-b-0  border-black/10 grid place-content-center text-center ">
-                <h1 class="counter text-4xl font-bold text-white" data-count="70">0</h1>
+                <h1 class="deliveries text-4xl font-bold text-white" data-count="70">0</h1>
                 <p class="font-medium">Deliveries</p>
             </div>
             <div
                 class=" h-20 w-full border-b-4 sm:border-r-4 sm:border-b-0  border-black/10 grid place-content-center text-center ">
-                <h1 class="counter text-4xl font-bold text-white" data-count="200">0
+                <h1 class="sellers text-4xl font-bold text-white" data-count="200">0
 
                 </h1>
                 <p class="font-medium">Active Sellers</p>
             </div>
             <div
                 class=" h-20 w-full border-b-4 sm:border-r-4 sm:border-b-0  border-black/10 grid place-content-center text-center ">
-                <h1 class="counter text-4xl font-bold text-white" data-count="100">0</h1>
+                <h1 class="customers text-4xl font-bold text-white" data-count="100">0</h1>
                 <p class="font-medium">Happy Customers</p>
             </div>
             <div class=" h-full w-full border-black/10 grid place-content-center text-center ">
-                <h1 class="counter text-4xl font-bold text-white" data-count="70">0</h1>
-                <p class="font-medium">Downloads</p>
+                <h1 class="haiya text-4xl font-bold text-white" data-count="70">0</h1>
+                <p class="font-medium">Data</p>
             </div>
         </div>
         <div id="about"
@@ -265,7 +302,7 @@
                 </div>
                 <div class="right text-white z-20 flex ">
                     <a href="https://quickdropapp.phixtz.com/"
-                        class="card top-[calc(65%-280px)] left-[calc(50%-40%)] lg:left-0 lg:top-[calc(50%-200px)]  absolute rounded-2xl  h-[500px] lg:h-[400px] w-[80%] lg:w-[95%]   shadow-2xl">
+                        class="card top-[calc(65%-280px)] left-[calc(50%-40%)] lg:left-0 lg:top-[calc(50%-200px)]  absolute rounded-2xl  h-[500px] lg:h-[400px] w-[70%] lg:w-[95%]   shadow-2xl">
                         <div class=" ralewayFont font-extrabold text-3xl z-20">Food</div>
                         <h1
                             class="font-bold  text-lg hidden sm:flex ralewayFont p-4 bg-gradient-to-tr from-yellow-500 to-yellow-300 rounded-full w-md text-center z-20 text-white">
@@ -313,34 +350,35 @@
         </div>
 
         <!-- How it works -->
-        <div id="work" x-data=" {active: 1}" class=" w-full h-auto flex flex-col justify-center items-center ">
+        <div id="work" x-data=" {active: 1}" class=" w-full h-auto flex flex-col justify-center items-center pb-6 ">
             <div class=" flex flex-col gap-4 justify-center items-center ">
                 <h1 class="text-4xl font-extrabold text-gray-900">How It Works</h1>
                 <div class="h-1 w-18 bg-[#ff6324] "></div>
             </div>
 
             <!-- Main Dealers -->
-            <div id="mainDealers" class=" h-auto  w-full py-8 px-4 sm:px-10 lg:px-60 mt-0 mb-10">
-                <div class="bg-[#ff6324] h-13 w-[100%] rounded-full p-1  flex justify-center items-center gap-4">
+            <div id="mainDealers" class=" h-auto  w-full py-8 px-2 sm:px-10 lg:px-60 mt-0 mb-10">
+                <div
+                    class="bg-[#ff6324] h-13 w-[100%] rounded-full p-1  flex justify-center items-center gap-1 sm:gap-4">
                     <button @click="active = 1" :class="active === 1 ? 
                     'bg-gradient-to-tr from-yellow-400 to-yellow-300 text-gray-900' 
                     : 'bg-none text-white'"
-                        class="text-lg font-semibold cursor-pointer text-white hover:text-gray-900 transform transition-opacity ease-in-out duration-900  h-full w-full rounded-full grid place-content-center">
+                        class="text-sm sm:text-lg font-semibold cursor-pointer  hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center px-3  ">
                         User</button>
                     <div class="h-6 w-3 bg-yellow-300 "></div>
                     <button @click="active = 2"
                         :class="active === 2 ? 'bg-gradient-to-tr from-yellow-400 to-yellow-300 text-gray-900' : 'bg-none text-white'"
-                        class=" text-lg font-semibold cursor-pointer text-white hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center">
+                        class=" text-sm sm:text-lg font-semibold cursor-pointer hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center px-3">
                         Seller</button>
                     <div class="h-6 w-3 bg-yellow-300 "></div>
                     <button @click="active = 3"
                         :class="active === 3 ? 'bg-gradient-to-tr from-yellow-400 to-yellow-300 text-gray-900' : 'bg-none text-white'"
-                        class=" text-lg font-semibold cursor-pointer text-white hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center">
+                        class="text-sm sm:text-lg font-semibold cursor-pointer hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center px-3">
                         Dropper</button>
                     <div class="h-6 w-3 bg-yellow-300 "></div>
                     <button @click="active = 4"
                         :class="active === 4 ? 'bg-gradient-to-tr from-yellow-400 to-yellow-300 text-gray-900' : 'bg-none text-white'"
-                        class=" text-lg font-semibold cursor-pointer text-white hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center">
+                        class=" text-sm sm:text-lg font-semibold cursor-pointer hover:text-gray-900 transform transition-opacity ease-in-out duration-900 hover:bg-gradient-to-tr from-yellow-400 to-yellow-300  h-full w-full rounded-full grid place-content-center px-3">
                         Agent</button>
                 </div>
             </div>
@@ -352,9 +390,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-bl from-yellow-400 to-yellow-300  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%]">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%]">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-gray-900">Download the App</h1>
                             <div class="h-1 w-18  bg-[#ff6324] "></div>
                             <p class=" font-medium text-[14px] md:text-lg text-gray-900 text-end">Get it from the App
@@ -371,9 +409,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(96%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Create an Account</h1>
                             <div class="h-1 w-18  bg-yellow-300 "></div>
                             <p class=" font-medium text-[14px] md:text-lg text-white text-start">Sign up quickly with
@@ -390,9 +428,9 @@
                 <div class="relative bg-yellow-100 h-auto w-full px-4 py-10 sm:py-18 sm:px-16 lg:px-22 lg:py-26">
                     <div class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gray-900  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Set Up Your Profile</h1>
                             <div class="h-1 w-18  bg-[#ff6324] "></div>
                             <p class=" font-medium text-[14px] md:text-lg text-white text-end">Add your photo and
@@ -410,9 +448,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Start Using the App
                             </h1>
                             <div class="h-1 w-18  bg-yellow-300 "></div>
@@ -433,9 +471,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324]  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%]">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%]">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Download the App
                             </h1>
                             <div class="h-1 w-18  bg-yellow-300 "></div>
@@ -454,9 +492,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Create an Account
                             </h1>
                             <div class="h-1 w-18  bg-yellow-300 "></div>
@@ -475,9 +513,9 @@
                 <div class="relative bg-yellow-100 h-auto w-full px-4 py-10 sm:py-18 sm:px-16 lg:px-22 lg:py-26">
                     <div class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gray-900  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Set Up Your Profile
                             </h1>
                             <div class="h-1 w-18  bg-[#ff6324] "></div>
@@ -496,9 +534,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Start Using the
                                 App
                             </h1>
@@ -519,9 +557,9 @@
                 <div class="relative bg-gray-200 h-auto w-full px-4 py-10 sm:py-18 sm:px-16 lg:px-22 lg:py-26">
                     <div class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gray-900  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%]">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%]">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Download the
                                 App</h1>
                             <div class="h-1 w-18  bg-[#ff6324] "></div>
@@ -540,9 +578,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Create an
                                 Account</h1>
                             <div class="h-1 w-18  bg-yellow-300 "></div>
@@ -561,9 +599,9 @@
                 <div class="relative bg-yellow-100 h-auto w-full px-4 py-10 sm:py-18 sm:px-16 lg:px-22 lg:py-26">
                     <div class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gray-900  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Set Up Your
                                 Profile</h1>
                             <div class="h-1 w-18  bg-[#ff6324] "></div>
@@ -583,9 +621,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Start Using
                                 the App
                             </h1>
@@ -607,9 +645,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324]  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%]">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%]">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Download
                                 the App</h1>
                             <div class="h-1 w-18  bg-yellow-300"></div>
@@ -628,9 +666,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-160px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Create an
                                 Account</h1>
                             <div class="h-1 w-18  bg-yellow-300 "></div>
@@ -649,9 +687,9 @@
                 <div class="relative bg-yellow-100 h-auto w-full px-4 py-10 sm:py-18 sm:px-16 lg:px-22 lg:py-26">
                     <div class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gray-900  flex items-end flex-col gap-2">
                         <img src="./images/step1.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(30%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
+                            class="absolute top-[calc(50%-100px)] left-[calc(35%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(30%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(20%-160px)] w-auto h-50 sm:h-100 lg:h-120 ">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14  lg:py-18 px-6 sm:px-18 lg:px-24 flex items-end flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-end font-extrabold text-white">Set Up Your
                                 Profile</h1>
                             <div class="h-1 w-18  bg-[#ff6324] "></div>
@@ -671,9 +709,9 @@
                     <div
                         class=" h-auto w-full rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-[#e04e15] to-[#ff6324] flex items-start flex-col gap-2">
                         <img src="./images/step00.png" alt=""
-                            class="absolute top-[calc(50%-100px)] left-[calc(1000%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
+                            class="absolute top-[calc(50%-100px)] left-[calc(97%-130px)] sm:top-[calc(50%-190px)] sm:left-[calc(80%-160px)]  lg:top-[calc(50%-240px)] lg:left-[calc(80%-190px)] w-auto h-50 sm:h-100 lg:h-120 z-20">
                         <div
-                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[80%] sm:w-[60%] lg:w-[50%] ">
+                            class=" rounded-3xl py-4 sm:py-14 lg:py-18 px-4 sm:px-18 lg:px-24 flex items-start flex-col gap-2 w-[70%] sm:w-[60%] lg:w-[50%] ">
                             <h1 class="text-2xl sm:text-3xl text-start font-extrabold text-white">Start
                                 Using the App
                             </h1>
@@ -688,356 +726,373 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- social media -->
+        <!-- social media -->
+        <div
+            class=" w-full h-auto grid place-content-center place-items-center bg-[#ff6324]/8  pb-28 pt-14 overflow-hidden">
+            <div class="h-20 w-full  grid place-content-center pb-20 pt-10 place-items-center gap-3">
+                <h1 class="text-center text-3xl font-extrabold text-gray-900">Follow our journey on social media
+                </h1>
+                <div class="h-1 w-18 bg-[#ff6324] "></div>
+            </div>
             <div
-                class=" w-full h-auto grid place-content-center place-items-center bg-[#ff6324]/8  pb-28 pt-14 overflow-hidden">
-                <div class="h-20 w-full  grid place-content-center pb-20 pt-10 place-items-center gap-3">
-                    <h1 class="text-center text-3xl font-extrabold text-gray-900">Follow our journey on social media
-                    </h1>
-                    <div class="h-1 w-18 bg-[#ff6324] "></div>
+                class="grid grid-rows-[1fr_1fr_1fr_1fr] grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] md:grid-rows-2 lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-2 gap-4 h-300 md:h-[80vh] w-[80vw]   overflow-x-hidden">
+                <a href="instagram.com"
+                    class="overflow-hidden rounded-3xl w-full h-full hidden md:flex place-self-start row-span-2 ">
+                    <img src="./images/0__.jpg" alt=""
+                        class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106">
+                </a>
+                <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full ">
+                    <img src="./images/0_+.jpg" alt=""
+                        class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106">
+                </a>
+                <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full "><img src="./images/pst1.jpg"
+                        alt=""
+                        class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106"></a>
+                <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full border-4 border-[#ff6324]"><img
+                        src="./images/0_.jpg" alt=""
+                        class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106"></a>
+                <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full "><img
+                        src="./images/pst.finaleeeeeeeeee.jpg" alt=""
+                        class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106"></a>
+                </a>
+            </div>
+        </div>
+
+        <!-- fAQ -->
+        <div id="faq" x-data="{ open: null }"
+            class="flex flex-col gap-4 justify-center items-center pt-30 pb-40 w-full  h-full ">
+            <!-- Title -->
+            <h1 class="text-4xl font-extrabold text-[#ff6324]">FAQs</h1>
+            <div class="h-1 w-14 bg-yellow-300 mb-6"></div>
+
+            <div class="overflow-hidden grid grid-cols-1 gap-4 h-full w-full  px-4 sm:px-8 lg:px-18 ">
+                <!-- Question 1 -->
+                <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
+                    <button @click="open = open === 1 ? null : 1"
+                        class="flex justify-between items-center w-full text-left">
+                        <h1 class="text-lg font-semibold text-gray-900 ">How do I create an account?</h1>
+                        <span>
+                            <svg x-show="open !== 1" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <svg x-show="open === 1" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div x-show="open === 1" x-transition class="mt-8 text-gray-700">
+                        You can create an account by clicking the "Sign Up" button and filling in your details.
+                    </div>
                 </div>
-                <div
-                    class="grid grid-rows-[1fr_1fr_1fr_1fr] grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] md:grid-rows-2 lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-2 gap-4 h-300 md:h-[80vh] w-[80vw]   overflow-x-hidden">
-                    <a href="instagram.com"
-                        class="overflow-hidden rounded-3xl w-full h-full hidden md:flex place-self-start row-span-2 ">
-                        <img src="./images/0__.jpg" alt=""
-                            class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106">
-                    </a>
-                    <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full ">
-                        <img src="./images/0_+.jpg" alt=""
-                            class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106">
-                    </a>
-                    <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full "><img
-                            src="./images/pst1.jpg" alt=""
-                            class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106"></a>
-                    <a href="instagram.com"
-                        class="overflow-hidden rounded-3xl w-full h-full border-4 border-[#ff6324]"><img
-                            src="./images/0_.jpg" alt=""
-                            class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106"></a>
-                    <a href="instagram.com" class="overflow-hidden rounded-3xl w-full h-full "><img
-                            src="./images/pst.finaleeeeeeeeee.jpg" alt=""
-                            class="w-full h-full rounded-3xl object-cover transform transition duration-500 hover:scale-106"></a>
-                    </a>
+
+                <!-- Question 2 -->
+                <div class="w-full h-auto  rounded-xl py-3 px-7 border-2 bg-yellow-50 border-yellow-200">
+                    <button @click="open = open === 2 ? null : 2"
+                        class="flex justify-between items-center w-full text-left">
+                        <h1 class="text-lg font-semibold text-gray-900">How can I reset my password?</h1>
+                        <span>
+                            <svg x-show="open !== 2" class="h-6 w-6 cursor-pointer text-yellow-400" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <svg x-show="open === 2" class="h-6 w-6 cursor-pointer text-yellow-400" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div x-show="open === 2" x-transition class="mt-8 text-gray-700">
+                        To reset your password, go to the login page and click on "Forgot Password".
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
+                    <button @click="open = open === 3 ? null : 3"
+                        class="flex justify-between items-center w-full text-left">
+                        <h1 class="text-lg font-semibold text-gray-900">Where can I track my orders?</h1>
+                        <span>
+                            <svg x-show="open !== 3" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <svg x-show="open === 3" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div x-show="open === 3" x-transition class="mt-8 text-gray-700">
+                        You can track your orders from your dashboard under "My Orders".
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="w-full h-auto  rounded-xl py-3 px-7 border-2 bg-yellow-50 border-yellow-200">
+                    <button @click="open = open === 4 ? null : 4"
+                        class="flex justify-between items-center w-full text-left">
+                        <h1 class="text-lg font-semibold text-gray-900">Do you offer refunds?</h1>
+                        <span>
+                            <svg x-show="open !== 4" class="h-6 w-6 cursor-pointer text-yellow-400" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <svg x-show="open === 4" class="h-6 w-6 cursor-pointer text-yellow-400" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div x-show="open === 4" x-transition class="mt-8 text-gray-700">
+                        Yes, we offer refunds within 14 days of purchase if the product meets our refund policy.
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
+                    <button @click="open = open === 5 ? null : 5"
+                        class="flex justify-between items-center w-full text-left">
+                        <h1 class="text-lg font-semibold text-gray-900">Can I change my delivery address?</h1>
+                        <span>
+                            <svg x-show="open !== 5" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <svg x-show="open === 5" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div x-show="open === 5" x-transition class="mt-8 text-gray-700">
+                        Yes, you can update your delivery address before the order is dispatched.
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="w-full h-auto rounded-xl py-3 px-7 border-2 bg-yellow-50 border-yellow-200">
+                    <button @click="open = open === 6 ? null : 6"
+                        class="flex justify-between items-center w-full text-left">
+                        <h1 class="text-lg font-semibold text-gray-900">How do I contact customer support?</h1>
+                        <span>
+                            <svg x-show="open !== 6" class="h-6 w-6 cursor-pointer text-yellow-400" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <svg x-show="open === 6" class="h-6 w-6 cursor-pointer text-yellow-400" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div x-show="open === 6" x-transition class="mt-8 text-gray-700">
+                        You can reach our customer support team through the "Contact Us" page or via live chat.
+                    </div>
                 </div>
             </div>
 
-            <!-- fAQ -->
-            <div id="faq" x-data="{ open: null }"
-                class="flex flex-col gap-4 justify-center items-center pt-30 pb-40 w-full  h-full ">
-                <!-- Title -->
-                <h1 class="text-4xl font-extrabold text-[#ff6324]">FAQs</h1>
-                <div class="h-1 w-14 bg-yellow-300 mb-6"></div>
 
-                <div
-                    class="overflow-hidden grid grid-cols-1 gap-4 h-full w-full  px-4 sm:px-8 lg:px-18 border-2 border-[#ff6324]/15">
-                    <!-- Question 1 -->
-                    <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
-                        <button @click="open = open === 1 ? null : 1"
-                            class="flex justify-between items-center w-full text-left">
-                            <h1 class="text-lg font-semibold text-gray-900 ">How do I create an account?</h1>
-                            <span>
-                                <svg x-show="open !== 1" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                </svg>
-                                <svg x-show="open === 1" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div x-show="open === 1" x-transition class="mt-8 text-gray-700">
-                            You can create an account by clicking the "Sign Up" button and filling in your details.
-                        </div>
-                    </div>
+        </div>
 
-                    <!-- Question 2 -->
-                    <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
-                        <button @click="open = open === 2 ? null : 2"
-                            class="flex justify-between items-center w-full text-left">
-                            <h1 class="text-lg font-semibold text-gray-900">How can I reset my password?</h1>
-                            <span>
-                                <svg x-show="open !== 2" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                </svg>
-                                <svg x-show="open === 2" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div x-show="open === 2" x-transition class="mt-8 text-gray-700">
-                            To reset your password, go to the login page and click on "Forgot Password".
-                        </div>
-                    </div>
-
-                    <!-- Question 3 -->
-                    <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
-                        <button @click="open = open === 3 ? null : 3"
-                            class="flex justify-between items-center w-full text-left">
-                            <h1 class="text-lg font-semibold text-gray-900">Where can I track my orders?</h1>
-                            <span>
-                                <svg x-show="open !== 3" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                </svg>
-                                <svg x-show="open === 3" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div x-show="open === 3" x-transition class="mt-8 text-gray-700">
-                            You can track your orders from your dashboard under "My Orders".
-                        </div>
-                    </div>
-
-                    <!-- Question 4 -->
-                    <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
-                        <button @click="open = open === 4 ? null : 4"
-                            class="flex justify-between items-center w-full text-left">
-                            <h1 class="text-lg font-semibold text-gray-900">Do you offer refunds?</h1>
-                            <span>
-                                <svg x-show="open !== 4" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                </svg>
-                                <svg x-show="open === 4" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div x-show="open === 4" x-transition class="mt-8 text-gray-700">
-                            Yes, we offer refunds within 14 days of purchase if the product meets our refund policy.
-                        </div>
-                    </div>
-
-                    <!-- Question 5 -->
-                    <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
-                        <button @click="open = open === 5 ? null : 5"
-                            class="flex justify-between items-center w-full text-left">
-                            <h1 class="text-lg font-semibold text-gray-900">Can I change my delivery address?</h1>
-                            <span>
-                                <svg x-show="open !== 5" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                </svg>
-                                <svg x-show="open === 5" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div x-show="open === 5" x-transition class="mt-8 text-gray-700">
-                            Yes, you can update your delivery address before the order is dispatched.
-                        </div>
-                    </div>
-
-                    <!-- Question 6 -->
-                    <div class="w-full h-auto bg-[#ff6324]/6 rounded-xl py-3 px-7 border-2 border-[#ff6324]/15">
-                        <button @click="open = open === 6 ? null : 6"
-                            class="flex justify-between items-center w-full text-left">
-                            <h1 class="text-lg font-semibold text-gray-900">How do I contact customer support?</h1>
-                            <span>
-                                <svg x-show="open !== 6" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                </svg>
-                                <svg x-show="open === 6" class="h-6 w-6 cursor-pointer text-[#ff6324]" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div x-show="open === 6" x-transition class="mt-8 text-gray-700">
-                            You can reach our customer support team through the "Contact Us" page or via live chat.
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <!-- footer -->
-            <footer id="contacts"
-                class="relative w-full h-auto bg-black flex flex-col gap-4 px-6 sm:px-12 py-8 sm:py-20 border-2">
-                <!-- <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-br from-transparent to-[#ff6324]/14 mb-6">
+        <!-- footer -->
+        <footer id="contacts"
+            class="relative w-full h-auto bg-black flex flex-col gap-4 px-6 sm:px-12 py-8 sm:py-20 border-2">
+            <!-- <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-br from-transparent to-[#ff6324]/14 mb-6">
         </div> -->
-                <div class=" grid grid-cols-1 md:grid-cols-[1fr_1.5fr]">
-                    <div class="relative w-full h-110 hidden md:block ">
-                        <div
-                            class="absolute bg-gradient-to-tr from-yellow-400 to-transparent top-0 left-0 w-full h-full rounded-3xl ">
-                        </div>
-                        <img src="images/0.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
+            <div class=" grid grid-cols-1 md:grid-cols-[1fr_1.5fr]">
+                <div class="relative w-full h-110 hidden md:block ">
+                    <div
+                        class="absolute bg-gradient-to-tr from-yellow-400 to-transparent top-0 left-0 w-full h-full rounded-3xl ">
                     </div>
-                    <div class=" grid grid-rows-[0.5fr_1fr_1fr_2fr_1fr]  py-6 pl-0 md:pl-15 gap-4 ">
-                        <h1 class="text-3xl font-extrabold text-[#ff6324] flex items-center">Contact Us
-                        </h1>
-                        <input type="text" placeholder="Your Name"
-                            class=" w-full h-full p-4 bg-white focus:outline-2 outline-yellow-300/70 outline-offset-4">
-                        <input type="text" placeholder="Your Email"
-                            class="w-full h-full p-4 bg-white focus:outline-2 outline-yellow-300/70 outline-offset-4">
-                        <textarea placeholder="Write your comment here..." name="textarea" cols="20" rows="3"
-                            class="w-full h-full p-4 bg-white focus:outline-2 outline-yellow-300/70 outline-offset-4"
-                            id=""> Write your comment here...</textarea>
-                        <button
-                            class="cursor-pointer w-full h-full p-4 bg-[#ff6324] text-white font-semibold hover:bg-[#e04e15]">Send</button>
-                    </div>
+                    <img src="images/0.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
                 </div>
-
-                <div class=" mt-20 flex items-center justify-center">
-                    <div class="h-0.5 w-100 bg-white/40"></div>
+                <div class=" grid grid-rows-[0.5fr_1fr_1fr_2fr_1fr]  py-6 pl-0 md:pl-15 gap-4 ">
+                    <h1 class="text-3xl font-extrabold text-[#ff6324] flex items-center">Contact Us
+                    </h1>
+                    <input type="text" placeholder="Your Name"
+                        class=" w-full h-full p-4 bg-white focus:outline-2 outline-yellow-300/70 outline-offset-4">
+                    <input type="text" placeholder="Your Email"
+                        class="w-full h-full p-4 bg-white focus:outline-2 outline-yellow-300/70 outline-offset-4">
+                    <textarea placeholder="Write your comment here..." name="textarea" cols="20" rows="3"
+                        class="w-full h-full p-4 bg-white focus:outline-2 outline-yellow-300/70 outline-offset-4"
+                        id=""> Write your comment here...</textarea>
+                    <button
+                        class="cursor-pointer w-full h-full p-4 bg-[#ff6324] text-white font-semibold hover:bg-[#e04e15]">Send</button>
                 </div>
+            </div>
 
-                <div class=" grid grid-cols-[1fr_1fr]  p-0 md:p-18 md:grid-cols-3 md:grid-rows-1">
-                    <div class="text-white hidden md:flex flex-row md:flex-col  ">
-                        <img src="images/Artboard 22.png" alt="" class="w-40 h-auto flex">
-                        <p class="text-md font-medium">Upgrade Your shopping Experience</p>
-                    </div>
-                    <div class="text-white flex flex-col  gap-2">
-                        <h1 class="text-2xl font-semibold">Quick Links</h1>
-                        <div class="h-1 w-8 bg-yellow-300 mb-2"></div>
-                        <a href="#" class="text-gray-300 hover:text-white">Home</a>
-                        <a href="#about" class="text-gray-300 hover:text-white">About</a>
-                        <a href="#services" class="text-gray-300 hover:text-white">Services</a>
-                        <a href="#faq" class="text-gray-300 hover:text-white">FAQs</a>
-                        <a href="#work" class="text-gray-300 hover:text-white">How It Works</a>
-                        <a href="#contact" class="text-gray-300 hover:text-white">Contact Us</a>
-                    </div>
-                    <div class="text-white flex flex-col  gap-2">
-                        <h1 class="text-2xl font-semibold">Location</h1>
-                        <div class="h-1 w-8 bg-yellow-300 mb-2"></div>
-                        <div class="text-gray-300 text-lg/7">
-                            Phone: 0800714888 (Toll free) <br>
-                            Email: drop@quickdroptz.direct <br>
-                            WhatsApp: +255 659 430 043 <br>
-                            NSSF Tower <br>
-                            Bibi Titi Mohamed Road <br>
-                            11102 Dar es Salaam, Tanzania
-                        </div>
+            <div class=" mt-20 flex items-center justify-center">
+                <div class="h-0.5 w-100 bg-white/40"></div>
+            </div>
 
-                    </div>
+            <div class=" grid grid-cols-[1fr_1fr]  p-0 md:p-18 md:grid-cols-3 md:grid-rows-1">
+                <div class="text-white hidden md:flex flex-row md:flex-col  ">
+                    <a href=""><img src="images/Artboard 22.png" alt="" class="w-40 h-auto flex"></a>
+                    <p class="text-md font-medium">Upgrade Your shopping Experience</p>
                 </div>
-            </footer>
-            <p
-                class="h-full w-full text-white text-center bg-gradient-to-tr from-[#bb3804] to-[#ff6324] p-5 text-xl font-semibold">
-                2025
-                QuickDrop. All rights reserved.</p>
+                <div class="text-white flex flex-col  gap-2">
+                    <h1 class="text-2xl font-semibold">Quick Links</h1>
+                    <div class="h-1 w-8 bg-yellow-300 mb-2"></div>
+                    <a href="#" class="text-gray-300 hover:text-white">Home</a>
+                    <a href="#about" id="about-link" class="text-gray-300 hover:text-white">About</a>
+                    <a href="#services" id="services-link" class="text-gray-300 hover:text-white">Services</a>
+                    <a href="#faq" id="faqs-link" class="text-gray-300 hover:text-white">FAQs</a>
+                    <a href="#work" id="work-link" class="text-gray-300 hover:text-white">How It Works</a>
+                    <a href="#contacts" id="contacts-link" class="text-gray-300 hover:text-white">Contact Us</a>
+                </div>
+                <div class="text-white flex flex-col  gap-2">
+                    <h1 class="text-2xl font-semibold">Location</h1>
+                    <div class="h-1 w-8 bg-yellow-300 mb-2"></div>
+                    <div class="text-gray-300 text-lg/7">
+                        Phone: 0800714888 (Toll free) <br>
+                        Email: drop@quickdroptz.direct <br>
+                        WhatsApp: +255 659 430 043 <br>
+                        NSSF Tower <br>
+                        Bibi Titi Mohamed Road <br>
+                        11102 Dar es Salaam, Tanzania
+                    </div>
 
-            <!-- scripts -->
+                </div>
+            </div>
+        </footer>
+        <p
+            class="h-full w-full text-white text-center bg-gradient-to-tr from-[#bb3804] to-[#ff6324] p-5 text-xl font-semibold">
+            2025
+            QuickDrop. All rights reserved.</p>
 
-            <!-- about us -->
-            <script>
-                document.getElementById("about-link").addEventListener("click", function (e) {
-                    e.preventDefault(); // stop instant jump
-                    document.querySelector("#about").scrollIntoView({
-                        behavior: "smooth"
-                    });
+        <!-- scripts -->
+
+        <!-- about us -->
+        <script>
+            document.getElementById("about-link").addEventListener("click",
+            function (e) {
+                e.preventDefault(); // stop instant jump
+                document.querySelector("#about").scrollIntoView({
+                    behavior: "smooth"
                 });
-            </script>
-            <!-- services -->
-            <script>
-                document.getElementById("services-link").addEventListener("click", function (e) {
-                    e.preventDefault(); // stop instant jump
-                    document.querySelector("#services").scrollIntoView({
-                        behavior: "smooth"
-                    });
+            });
+        </script>
+        <!-- services -->
+        <script>
+            document.getElementById("services-link").addEventListener("click", function (e) {
+                e.preventDefault(); // stop instant jump
+                document.querySelector("#services").scrollIntoView({
+                    behavior: "smooth"
                 });
-            </script>
-            <!-- faqs -->
-            <script>
-                document.getElementById("faqs-link").addEventListener("click", function (e) {
-                    e.preventDefault(); // stop instant jump
-                    document.querySelector("#faq").scrollIntoView({
-                        behavior: "smooth"
-                    });
+            });
+        </script>
+        <!-- faqs -->
+        <script>
+            document.getElementById("faqs-link").addEventListener("click", function (e) {
+                e.preventDefault(); // stop instant jump
+                document.querySelector("#faq").scrollIntoView({
+                    behavior: "smooth"
                 });
-            </script>
-            <!-- how it works -->
-            <script>
-                document.getElementById("work-link").addEventListener("click", function (e) {
-                    e.preventDefault(); // stop instant jump
-                    document.querySelector("#work").scrollIntoView({
-                        behavior: "smooth"
-                    });
+            });
+        </script>
+        <!-- how it works -->
+        <script>
+            document.getElementById("work-link").addEventListener("click", function (e) {
+                e.preventDefault(); // stop instant jump
+                document.querySelector("#work").scrollIntoView({
+                    behavior: "smooth"
                 });
-            </script>
-            <!-- contacts -->
-            <script>
-                document.getElementById("contacts-link").addEventListener("click", function (e) {
-                    e.preventDefault(); // stop instant jump
-                    document.querySelector("#contacts").scrollIntoView({
-                        behavior: "smooth"
-                    });
+            });
+        </script>
+        <!-- contacts -->
+        <script>
+            document.getElementById("contacts-link").addEventListener("click", function (e) {
+                e.preventDefault(); // stop instant jump
+                document.querySelector("#contacts").scrollIntoView({
+                    behavior: "smooth"
                 });
-            </script>
+            });
+        </script>
 
-            <script>
-                const counters = document.querySelectorAll(".counter");
+        <script>
+            // const counters = document.querySelectorAll(".counter");
+            // const counters = document.querySelectorAll(".counter");
 
-                function startCounting(counter) {
-                    let count = 0;
-                    const target = parseInt(counter.dataset.count); // get target number from data-count
 
-                    const updateCounter = setInterval(function () {
-                        counter.textContent = count;
-                        count++;
-                        if (count >= target) {
-                            clearInterval(updateCounter);
-                            counter.textContent = target + "+"; // show final number with +
-                        }
-                    }, 30); // adjust speed (higher = slower, lower = faster)
-                }
+            function startCounting(counter) {
+                let count = 0;
+                const target = parseInt(counter.dataset.count); // get target number from data-count
 
-                // Loop through all counters
-                counters.forEach(counter => {
-                    startCounting(counter);
-                });
-
-            </script>
-
-            <script>
-                let cards = document.querySelectorAll(".card");
-
-                let stackArea = document.querySelector(".stack-area");
-
-                function rotateCards() {
-                    let angle = 0;
-                    cards.forEach((card, index) => {
-                        if (card.classList.contains("away")) {
-                            card.style.transform = `translateY(-120vh) rotate(-48deg)`;
-                        } else {
-                            card.style.transform = ` rotate(${angle}deg)`;
-                            angle = angle - 1;
-                            card.style.zIndex = cards.length - index;
-                        }
-                    });
-                }
-
-                rotateCards();
-
-                window.addEventListener("scroll", () => {
-                    let distance = window.innerHeight * 0.5;
-
-                    let topVal = stackArea.getBoundingClientRect().top;
-
-                    let index = -1 * (topVal / distance + 1);
-
-                    index = Math.floor(index);
-
-                    for (i = 0; i < cards.length; i++) {
-                        if (i <= index) {
-                            cards[i].classList.add("away");
-                        } else {
-                            cards[i].classList.remove("away");
-                        }
+                const updateCounter = setInterval(function () {
+                    counter.textContent = count;
+                    count++;
+                    if (count >= target) {
+                        clearInterval(updateCounter);
+                        counter.textContent = target + "+"; // show final number with +
                     }
-                    rotateCards();
-                });
-            </script>
-</body>
+                }, 30); // adjust speed (higher = slower, lower = faster)
+            }
 
+            // Create observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounting(entry.target);
+                        observer.unobserve(entry.target); // prevent counting again
+                    }
+                });
+            }, { threshold: 0.5 }); // 0.5 means at least 50% visible
+
+            observer.observe(document.getElementsByClassName("downloads")[0]);
+            observer.observe(document.getElementsByClassName("deliveries")[0]);
+            observer.observe(document.getElementsByClassName("sellers")[0]);
+            observer.observe(document.getElementsByClassName("customers")[0]);
+            observer.observe(document.getElementsByClassName("haiya")[0]);
+
+            // Attach observer to all counters
+            // counters.forEach(counter => {
+            //     observer.observe(counter);
+            // });
+
+        </script>
+
+        <script>
+            let cards = document.querySelectorAll(".card");
+
+            let stackArea = document.querySelector(".stack-area");
+
+            function rotateCards() {
+                let angle = 0;
+                cards.forEach((card, index) => {
+                    if (card.classList.contains("away")) {
+                        card.style.transform = `translateY(-120vh) rotate(-48deg)`;
+                    } else {
+                        card.style.transform = ` rotate(${angle}deg)`;
+                        angle = angle - 1;
+                        card.style.zIndex = cards.length - index;
+                    }
+                });
+            }
+
+            rotateCards();
+
+            window.addEventListener("scroll", () => {
+                let distance = window.innerHeight * 0.5;
+
+                let topVal = stackArea.getBoundingClientRect().top;
+
+                let index = -1 * (topVal / distance + 1);
+
+                index = Math.floor(index);
+
+                for (i = 0; i < cards.length; i++) {
+                    if (i <= index) {
+                        cards[i].classList.add("away");
+                    } else {
+                        cards[i].classList.remove("away");
+                    }
+                }
+                rotateCards();
+            });
+        </script>
+</body>
 </html>
