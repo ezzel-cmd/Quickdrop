@@ -969,12 +969,12 @@
         <!-- about us -->
         <script>
             document.getElementById("about-link").addEventListener("click",
-            function (e) {
-                e.preventDefault(); // stop instant jump
-                document.querySelector("#about").scrollIntoView({
-                    behavior: "smooth"
+                function (e) {
+                    e.preventDefault(); // stop instant jump
+                    document.querySelector("#about").scrollIntoView({
+                        behavior: "smooth"
+                    });
                 });
-            });
         </script>
         <!-- services -->
         <script>
@@ -1029,7 +1029,7 @@
                         clearInterval(updateCounter);
                         counter.textContent = target + "+"; // show final number with +
                     }
-                }, 30); // adjust speed (higher = slower, lower = faster)
+                }, 10); // adjust speed (higher = slower, lower = faster)
             }
 
             // Create observer
@@ -1095,4 +1095,5 @@
             });
         </script>
 </body>
+
 </html>
