@@ -123,15 +123,18 @@
                             class="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-yellow-300 after:scale-x-0 after:origin-left after:transition-transform after:duration-500 hover:after:scale-x-100">Contact
                             Us</a></li>
                 </ul>
+
+
+                
                 <div class="">
-                    <button @click="open = !open" class=" flex sm:hidden pr-4">
+                    <button @click="open = !open" display="none" class=" flex md:hidden pr-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="h-6 w-6 text-black">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
-                    <div x-show="open" x-transition:enter.duration.300ms x-transition:leave.duration.500ms
+                    <div x-show="open" x-transition:enter.duration.300ms x-transition:leave.duration.500ms 
                         class="fixed top-0 right-0 w-full h-full bg-black/80 flex justify-center items-center  gap-4  z-50 ">
                         <div @click="open = !open" class="absolute top-0 right-0 w-full h-full "></div>
                         <div class="absolute top-0 pt-20 right-0 w-[80%] h-full bg-white">
@@ -250,16 +253,14 @@
 
 
             </nav>
-
-
         </header>
 
         <!-- video part -->
         <section class="w-full h-auto flex justify-center items-center">
-            <div class="  relative  w-[100%] h-100 md:120 lg:h-130  bg-[#ff6324] rounded-4xl ">
+            <div class="  relative  w-[100%] h-100  md:120 lg:h-130  bg-[#ff6324] rounded-4xl ">
                 <video src="vid/vd.mp4" class="absolute top-0 left-0 w-full h-full object-cover rounded-4xl" autoplay
-                    loop muted></video>
-                <div
+                    loop muted></video> 
+                <div   
                     class="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row lg:flex-row justify-end gap-5 md:justify-between items-start md:items-end z-20 px-8 lg:px-16 py-10 lg:py-20 ">
                     <h1 class="text-5xl md:text-6xl font-extrabold text-white z-20">Fast. <span
                             class="text-yellow-300">Easy.</span>
